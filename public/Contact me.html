@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Branko Bukilic</title>
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#0f1220;
+      --neon-cyan:#16d9ff;
+      --neon-pink:#f52789;
+      --accent:#1685f8;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:14px;
+      color-scheme: dark;
+    }
+
+    /* Page */
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(22,137,248,0.06), transparent),
+                  radial-gradient(800px 400px at 90% 90%, rgba(245,39,137,0.04), transparent),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+    }
+
+    /* Card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6), 0 0 0 1px rgba(255,255,255,0.03) inset;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    header.site-header{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom:14px;
+    }
+
+    .avatar{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#07121a;
+      box-shadow: 0 6px 24px rgba(22,137,248,0.10), 0 0 30px rgba(245,39,137,0.04);
+      font-size:20px;
+    }
+
+    h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing: -0.2px;
+    }
+
+    p.lead{
+      margin:8px 0 18px 0;
+      color: #cfe8ff;
+      line-height:1.45;
+      font-size:14px;
+    }
+
+    /* Contact details (right column) */
+    .contacts{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .contact-item{
+      background:var(--glass-2);
+      border-radius:12px;
+      padding:12px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .contact-item svg{ width:20px; height:20px; opacity:0.9; }
+
+    .contact-item a, .contact-item span{
+      color:inherit;
+      text-decoration:none;
+      font-size:14px;
+      word-break:break-word;
+    }
+
+    /* Form */
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-top:6px;
+    }
+
+    label{
+      font-size:13px;
+      color:#bfe8ff;
+    }
+
+    input[type="text"], input[type="email"], textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:10px;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      color: #eaf6ff;
+      font-size:14px;
+      outline:none;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+    }
+
+    textarea{ min-height:140px; resize:vertical; }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:6px;
+    }
+
+    .btn{
+      border:0;
+      padding:12px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+      background: linear-gradient(90deg, var(--neon-cyan), var(--accent));
+      color:#06121a;
+      box-shadow: 0 8px 30px rgba(22,137,248,0.12);
+    }
+
+    .btn.secondary{
+      background: transparent;
+      color:#cfe8ff;
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:none;
+    }
+
+    .small{
+      font-size:12px;
+      color:#a9cfe6;
+    }
+
+    footer.note{
+      margin-top:14px;
+      font-size:12px;
+      color:#9fc8e8;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      .container{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <!-- Left: About + Form -->
+    <section class="card" aria-labelledby="contact-title">
+      <header class="site-header">
+        <div class="avatar" aria-hidden="true">BB</div>
+        <div>
+          <h1 id="contact-title">Contact — Branko Bukilic</h1>
+          <p class="small">Developer • QA • Problem-solver</p>
+        </div>
+      </header>
+
+      <p class="lead">
+        Hi — I'm Branko. If you have a project, need help testing, or want to talk about web development, automation, music or travel — drop me a message below. I usually reply within a few business days.
+      </p>
+
+      <!-- Contact form: opens user's email client (mailto) with subject/body filled -->
+      <form id="contactForm" onsubmit="return sendByEmail(event)" aria-label="Contact form">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required placeholder="e.g. Ana Jovanović" />
+        </div>
+
+        <div>
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required placeholder="Quick question about testing / a project" />
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell me what you need..."></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn" type="submit">Send message</button>
+          <button class="btn secondary" type="button" onclick="copyEmail()">Copy my email</button>
+        </div>
+
+        <p class="small">By sending this message you agree to share your contact details so I can reply.</p>
+      </form>
+
+     
+    </section>
+
+    <!-- Right: Direct contact & social -->
+    <aside class="card" aria-label="Direct contact information">
+      <div class="contacts">
+        <div class="contact-item" aria-hidden="false">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 8V7a2 2 0 0 0-2-2h-1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 20a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8H3v12z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 12h10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>Email:</strong> <a href="mailto:b.bukilic@protonmail.com" id="directEmail">b.bukilic@protonmail.com</a></span>
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M22 16.92V21a1 1 0 0 1-1 1A19 19 0 0 1 2 3a1 1 0 0 1 1-1h4.09" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.6 3.46a1 1 0 0 1 1.11-.21c.98.46 3.18 1.77 3.18 4.8 0 3.6-2.6 6.77-5.5 9.28-2.78 2.36-5.5 2.54-8.05.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>Phone:</strong> <a href="tel:+381653233819">+381 65 3233 819</a></span>
+        </div>
+
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <path d="M16 11.37a4 4 0 1 1-7.99.63A4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/branko-bukilic-a14080159/" target="_blank" rel="noopener">branko-bukilic-a14080159</a></span>
+        </div>
+
+        <div class="contact-item" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 20v-6a2 2 0 0 0-2-2h-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 10v-4a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>Location:</strong> Serbia (remote work available)</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // === Replace "myemail@example.com" with your real address ===
+    const MY_EMAIL = "b.bukilic@protonmail.com"; // <-- put your real email here
+    document.getElementById('directEmail').href = `mailto:${MY_EMAIL}`;
+    document.getElementById('directEmail').textContent = MY_EMAIL;
+
+    // Build mailto link from form and open user's mail client
+    function sendByEmail(event){
+      event.preventDefault();
+      const form = event.target;
+      const name = encodeURIComponent(form.name.value.trim());
+      const email = encodeURIComponent(form.email.value.trim());
+      const subject = encodeURIComponent(form.subject.value.trim());
+      const message = encodeURIComponent(form.message.value.trim());
+
+      if(!name || !email || !subject || !message){
+        alert("Please fill all fields before sending.");
+        return false;
+      }
+
+      // Compose email body including sender contact
+      const body = encodeURIComponent(
+        `From: ${decodeURIComponent(name)} <${decodeURIComponent(email)}>\n\n` +
+        `${decodeURIComponent(message)}\n\n` +
+        `---\nSent via website contact form.`
+      );
+
+      // Open default mail client
+      const mailto = `mailto:${MY_EMAIL}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+
+      return false;
+    }
+
+    // Copy contact email to clipboard
+    function copyEmail(){
+      const email = MY_EMAIL;
+      if(!navigator.clipboard){
+        // fallback
+        const input = document.createElement('input');
+        input.value = email;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+        alert('Email copied to clipboard: ' + email);
+      } else {
+        navigator.clipboard.writeText(email).then(()=>{
+          alert('Email copied to clipboard: ' + email);
+        }, ()=> {
+          alert('Could not copy email. Please copy manually: ' + email);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

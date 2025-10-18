@@ -1,34 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">	
-		<title>My Website</title>
-	</head>
-	<body>
-	    <h1>Branko Bukilic's Portfolio</h1>
-        <h2>I'm a Web Developer</h2>
-        <hr />
-        <h3><a href="./public/movie-ranking.html">Rankiranje Filmova Projekat</a></h3>
-                <img src="./assets/images/Moj Movie Ranking.png" height="200" alt="Movie Ranking">
-        <h3><a href="./public/birthday-invite.html">Pozivnica za rodjendan Projekat</a></h3>
-                <img src="./assets/images/Moja pozivnica.png" height="500" alt="Birthday Invite"></a>
-        <hr />
-             <a href="./public/contact.html">Contact Me</a>
-             <a href="./public/about.html">About Me</a>
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Branko Bukilic — Resume</title>
+  <style>
+    :root{
+      --bg:#0b0b10;
+      --card:#0f1220;
+      --neon-cyan:#16d9ff;
+      --neon-pink:#f52789;
+      --accent:#1685f8;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:14px;
+      color-scheme: dark;
+    }
 
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(22,137,248,0.06), transparent),
+                  radial-gradient(800px 400px at 90% 90%, rgba(245,39,137,0.04), transparent),
+                  var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:32px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6), 0 0 0 1px rgba(255,255,255,0.03) inset;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      margin-bottom:20px;
+    }
+
+    header img{
+      width:140px;
+      height:140px;
+      border-radius:16px;
+      object-fit:cover;
+      box-shadow:0 0 30px rgba(22,137,248,0.25);
+    }
+
+    header h1{
+      font-size:26px;
+      margin:0;
+      color:var(--neon-cyan);
+      text-shadow:0 0 8px rgba(22,137,248,0.4);
+    }
+
+    h2{
+      color:var(--neon-pink);
+      text-shadow:0 0 8px rgba(245,39,137,0.4);
+      margin-top:30px;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      padding-bottom:4px;
+    }
+
+    p, li{
+      font-size:14px;
+      line-height:1.6;
+      color:#d6e8ff;
+    }
+
+    ul{
+      margin-top:8px;
+      margin-bottom:8px;
+    }
+
+    a{
+      color:var(--neon-cyan);
+      text-decoration:none;
+      transition:all .3s;
+    }
+
+    a:hover{
+      color:var(--neon-pink);
+      text-shadow:0 0 6px var(--neon-pink);
+    }
+
+    hr{
+      border:0;
+      height:1px;
+      background:rgba(255,255,255,0.05);
+      margin:24px 0;
+    }
+
+    footer{
+      text-align:center;
+      font-size:12px;
+      color:#9fc8e8;
+      margin-top:20px;
+    }
+
+    footer small{
+      opacity:0.8;
+    }
+
+    @media(max-width:720px){
+      header{flex-direction:column; text-align:center;}
+      header img{width:120px; height:120px;}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <img src="./assets/images/Selfi.jpg" alt="Branko Bukilic">
+      <div>
+        <h1>Branko Bukilić</h1>
+        <p>QA Engineer • Developer in Progress • Problem-Solver</p>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>I’m a motivated and detail-oriented professional with a strong background in IT and software testing, currently expanding my skills into programming and automation. My experience in manual QA, web application testing, and API validation has given me a solid understanding of how systems work and how to make them better. I’m always learning new technologies, especially Python and Golang, to grow as a developer and bring more value to the projects I work on.</p>
+
+      <p>As a person, I’m both analytical and creative. I enjoy combining logic with imagination — whether it’s through coding, music, or problem-solving. I’m passionate about continuous learning, collaboration, and building solutions that make a real difference. I value teamwork, honesty, and consistency, and I always aim to leave a positive impact in whatever I do.</p>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>Menadžment informacionih sistema — Union Fakultet</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Work Experience</h2>
+      <ul>
+        <li>
+          <h3>QA Engineer — Nites d.o.o</h3>
+          <p><em>January 2023 — Present</em></p>
+          <ul>
+            <li>Conducted manual testing of web applications to identify bugs and ensure functionality.</li>
+            <li>Collaborated with developers to understand requirements and provide feedback on usability.</li>
+            <li>Created and executed test cases for various features and functionalities.</li>
+            <li>Participated in daily stand-ups and sprint planning meetings as part of an Agile team.</li>
+            <li>Utilized Postman for API testing and validation.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Manual Testing</li>
+        <li>Web Application Testing</li>
+        <li>API Testing with Postman</li>
+        <li>HTML & CSS</li>
+        <li>Python (Basic)</li>
+        <li>Golang (Basic)</li>
+        <li>Agile Methodologies</li>
+        <li>Problem-Solving</li>
+        <li>Team Collaboration</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Other</h2>
+      <ul>
+        <li><a href="./public/Contact me.html">Contact Me</a></li>
+        <li><a href="./public/My Hobbies.html">My Hobbies</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <small>© 2025 Branko Bukilic</small>
+    </footer>
+  </main>
+</body>
 </html>
-
-<!-- TODO 2: Add Your previous projects' HTML into the public folder -->
-
-<!-- TODO 3: Take screenshots of your project previews and add the images to the images folder -->
-
-<!-- TODO 4: Add titles/subtitles etc. -->
-
-<!-- TODO 5: Add a link to the project pages -->
-
-<!-- TODO 6: Add images to show the project previews
-HINT for TODO 6: You can use the height attribute set to 200 to make the image smaller:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-height -->
-
-<!-- TODO 7: Add the Contact Me and About Me page links -->
